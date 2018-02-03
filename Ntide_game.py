@@ -25,15 +25,15 @@ def ntide_game(n_dict, player1, player2="computer"):
     else:
         currplayer = player2
         print(player2, " begins")
+
     while True:
         # get move of player
-
-
-
-
-        print(n_dict)
-        print("total number of Nucleotides: "+ str(sum(n_dict.values())))
-        move = input(currplayer + " please enter your move (E.g.: a,2 or c,1) :")
+        if currplayer == "computer":
+            move = winning_strat(n_dict)
+        else:
+            print(n_dict)
+            print("total number of Nucleotides: "+ str(sum(n_dict.values())))
+            move = input(currplayer + " please enter your move (E.g.: a,2 or c,1) :")
 
         try:
             n, v = move.split(",")
@@ -74,6 +74,7 @@ def ntide_game(n_dict, player1, player2="computer"):
         if ml == False:
             if currplayer == player1:
                 print("Turn player ", currplayer, " over")
+                print(chr(27) + "[2J")
                 currplayer = player2
                 ml = True
                 done = False
@@ -81,10 +82,11 @@ def ntide_game(n_dict, player1, player2="computer"):
 
             else:
                 print("Turn player ", currplayer, " over")
+                print(chr(27) + "[2J")
                 currplayer = player1
                 ml = True
                 done = False
                 tc = 0
 
 if __name__ == '__main__':
-    print (start_game(5,2,3,1))
+    start_game(1,1,1,1)
