@@ -117,7 +117,7 @@ def run_trail(start, end, method="ex2"):
 
 
 if __name__ == '__main__':
-    run_trail("elephant","animalic", "ex1")
+    run_trail("elephant","animalic")
     # export_gexf()
     # g = nwx.read_gpickle("words_dictionary.pickle")
     # #g = map_network("words_dictionary_ger.json")
