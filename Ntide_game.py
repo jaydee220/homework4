@@ -87,6 +87,29 @@ def ntide_game(n_dict, player1, player2="computer"):
                 ml = True
                 done = False
                 tc = 0
+def winning_strat(nnucl):
+    totnucl = sum(nnucl.values())
+    nrows = 4
+    for i in nnucl.values():
+        if i == 0:
+            nrows -= 1
+    if nrows == 4:
+        if
+            if (totnucl -1)%3 != 0:   #winning
+            #take one from the bggest row
+            else:     #losing
+
+    if nrows == 3:
+        if (totnucl-2)%3 != 0:    #winning
+
+        else:      #losing
+
+    if nrows == 2:
+        if totnucl%3 != 0:       #winning
+            #i win
+        else:        #losing
+            return False
 
 if __name__ == '__main__':
     start_game(1,1,1,1)
+
